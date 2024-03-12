@@ -1,0 +1,71 @@
+$primary: #5265E1;
+$secondary: #FA5959;
+
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.bton-grey{
+  background:  #f7f7f5;;
+}
+.me-nav{
+  margin-right: 100px;
+}
+#content-manager{
+  text-align: center;  
+  button{
+    min-width: 208px;
+    margin-bottom: 5px;
+  }
+}
+
+/******************************[ MEDIAS ]*******************************************/
+
+
+/************************ ≥576px*/
+@include media-breakpoint-up(sm) { 
+  body{
+    background: olive;
+  }
+ 
+ }
+
+/************************ ≥768px*/
+@include media-breakpoint-up(md) { 
+  body{
+    background: aquamarine;
+  }
+  #content-manager{
+    text-align: left;  
+  }
+ }
+ 
+ /************************ ≥992px*/
+@include media-breakpoint-up(lg) { 
+
+  .me-nav{
+    margin-right: 0px;
+  }
+
+  body{
+    background: #b4bcf5;
+  }
+}
+/************************ ≥1200px*/
+@include media-breakpoint-up(xl) { 
+  body{
+    background: pink;
+  }
+ }
+
+ /************************ ≥1400px*/
+@include media-breakpoint-up(xxl) { 
+  body{
+    background: silver;
+  }
+ }
