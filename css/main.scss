@@ -1,71 +1,123 @@
-$primary: #5265E1;
-$secondary: #FA5959;
-
+$primary: #5265e1;
+$secondary: #fa5959;
 
 $theme-colors: (
   "primary": $primary,
-  "secondary": $secondary
+  "secondary": $secondary,
 );
-
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-.bton-grey{
-  background:  #f7f7f5;;
+.bton-grey {
+  background: #f7f7f5;
 }
-.me-nav{
+.me-nav {
   margin-right: 100px;
 }
-#content-manager{
-  text-align: center;  
-  button{
+#content-manager {
+  text-align: center;
+  button {
     min-width: 208px;
     margin-bottom: 5px;
   }
 }
+#my-tabs-row {
+  #nav-tab {
+    /*TODO:  cambiar por variable &&& poner en  mediaquery que toca*/
+    // border-bottom: 1px solid #e0e0ea;
+    width: calc(100% - 3rem);
+    button.nav-link {
+      border: 1px 0px 0px 0px !important;
+      color: black; //TODO: cambiar por variable
+      &.active,
+      &:hover.active {
+        border: none;
+        border-bottom: 3px solid $secondary;
+      }
+      &:hover,
+      &:focus {
+        border-color: transparent;
+        outline: 0px;
+      }
+    }
+  }
+  #tabs-2 {
+    width: calc(100% - 3px);
+    text-align: center;
+    .nav-link {
+      border-color: transparent;
+      border-top: 1px solid silver; /*TODO: CAMBIAR COLOR*/
+      position: relative;
+      color: black;
+      &:last-child{
+        border-bottom: 1px solid silver; /*TODO: CAMBIAR COLOR*/
+      }
+      &:hover {
+        border-top: 1px solid silver; /*TODO: CAMBIAR COLOR*/
+      }
+      &.active {
+        font-weight: 500;
+      }
+      &.active:after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: calc(100% - 60%);
+        background-color: $secondary;
+        position: absolute;
+        bottom: 0px;
+        left: 50%; /* Mueve el elemento a la mitad del contenedor */
+        transform: translateX(
+          -50%
+        ); /* Lo desplaza hacia la izquierda la mitad de su propio ancho */
+      }
+     
+    }
+  }
+}
+// body{
+//   background: orange !important;
+// }
 
 /******************************[ MEDIAS ]*******************************************/
 
-
 /************************ ≥576px*/
-@include media-breakpoint-up(sm) { 
-  body{
-    background: olive;
+@include media-breakpoint-up(sm) {
+  body {
+    background: rgb(129, 129, 101);
   }
- 
- }
+}
 
 /************************ ≥768px*/
-@include media-breakpoint-up(md) { 
-  body{
-    background: aquamarine;
+@include media-breakpoint-up(md) {
+  body {
+    background: rgb(172, 219, 204);
   }
-  #content-manager{
-    text-align: left;  
+  #content-manager {
+    text-align: left;
   }
- }
- 
- /************************ ≥992px*/
-@include media-breakpoint-up(lg) { 
+}
 
-  .me-nav{
+/************************ ≥992px*/
+@include media-breakpoint-up(lg) {
+  .me-nav {
     margin-right: 0px;
   }
 
-  body{
-    background: #b4bcf5;
+  body {
+    background: #ced1ec;
   }
 }
 /************************ ≥1200px*/
-@include media-breakpoint-up(xl) { 
-  body{
-    background: pink;
+@include media-breakpoint-up(xl) {
+  body {
+    background: rgb(235, 207, 212);
   }
- }
+}
 
- /************************ ≥1400px*/
-@include media-breakpoint-up(xxl) { 
-  body{
-    background: silver;
+/************************ ≥1400px*/
+@include media-breakpoint-up(xxl) {
+  body {
+    background: rgb(223, 212, 212);
   }
- }
+}
