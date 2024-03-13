@@ -3,4 +3,6 @@
 
 # Ignorar archivos CSS map
 *.css.map
+
+# Ignorar archivos CSS map
 **/*.css.map
