@@ -22,28 +22,29 @@ $theme-colors: (
   }
 }
 #my-tabs-row {
-  #nav-tab {
-    /*TODO:  cambiar por variable &&& poner en  mediaquery que toca*/
-    // border-bottom: 1px solid #e0e0ea;
+
+  #tabs-2 {
     width: calc(100% - 3rem);
-    button.nav-link {
-      border: 1px 0px 0px 0px !important;
-      color: black; //TODO: cambiar por variable
-      &.active,
-      &:hover.active {
-        border: none;
-        border-bottom: 3px solid $secondary;
-      }
-      &:hover,
-      &:focus {
-        border-color: transparent;
-        outline: 0px;
+    text-align: center;
+    #nav-tab {
+      /*TODO:  cambiar por variable &&& poner en  mediaquery que toca*/
+      // border-bottom: 1px solid #e0e0ea;
+      width: calc(100% - 3rem);
+      button.nav-link {
+        border: 1px 0px 0px 0px !important;
+        color: black; //TODO: cambiar por variable
+        &.active,
+        &:hover.active {
+          border: none;
+          border-bottom: 3px solid $secondary;
+        }
+        &:hover,
+        &:focus {
+          border-color: transparent;
+          outline: 0px;
+        }
       }
     }
-  }
-  #tabs-2 {
-    width: calc(100% - 3px);
-    text-align: center;
     .nav-link {
       border-color: transparent;
       border-top: 1px solid silver; /*TODO: CAMBIAR COLOR*/
@@ -73,6 +74,7 @@ $theme-colors: (
       }
      
     }
+    
   }
 }
 // body{
@@ -84,9 +86,10 @@ $theme-colors: (
 /************************ ≥576px*/
 @include media-breakpoint-up(sm) {
   body {
-    background: rgb(129, 129, 101);
+    background: rgb(218, 158, 203);
   }
 }
+
 
 /************************ ≥768px*/
 @include media-breakpoint-up(md) {
@@ -96,7 +99,26 @@ $theme-colors: (
   #content-manager {
     text-align: left;
   }
+  #my-tabs-row #tabs-2 #nav-tab {
+    width: initial;
+  }
+  #tabs-2 .nav-link{
+    border-top: none !important;
+    &:after{
+      display: none !important;
+    }
+    &:last-child {
+        border-bottom: none !important;
+    }
+    &.active{
+      border-bottom: 3px solid $secondary !important;
+    }
+    &:hover{
+      color:  $secondary !important;
+    }
+  }
 }
+
 
 /************************ ≥992px*/
 @include media-breakpoint-up(lg) {

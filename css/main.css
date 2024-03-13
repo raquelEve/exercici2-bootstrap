@@ -11417,25 +11417,25 @@ textarea.form-control-lg {
   margin-bottom: 5px;
 }
 
-#my-tabs-row #nav-tab {
+#my-tabs-row #tabs-2 {
+  width: calc(100% - 3rem);
+  text-align: center;
+}
+#my-tabs-row #tabs-2 #nav-tab {
   /*TODO:  cambiar por variable &&& poner en  mediaquery que toca*/
   width: calc(100% - 3rem);
 }
-#my-tabs-row #nav-tab button.nav-link {
+#my-tabs-row #tabs-2 #nav-tab button.nav-link {
   border: 1px 0px 0px 0px !important;
   color: black;
 }
-#my-tabs-row #nav-tab button.nav-link.active, #my-tabs-row #nav-tab button.nav-link:hover.active {
+#my-tabs-row #tabs-2 #nav-tab button.nav-link.active, #my-tabs-row #tabs-2 #nav-tab button.nav-link:hover.active {
   border: none;
   border-bottom: 3px solid #fa5959;
 }
-#my-tabs-row #nav-tab button.nav-link:hover, #my-tabs-row #nav-tab button.nav-link:focus {
+#my-tabs-row #tabs-2 #nav-tab button.nav-link:hover, #my-tabs-row #tabs-2 #nav-tab button.nav-link:focus {
   border-color: transparent;
   outline: 0px;
-}
-#my-tabs-row #tabs-2 {
-  width: calc(100% - 3px);
-  text-align: center;
 }
 #my-tabs-row #tabs-2 .nav-link {
   border-color: transparent;
@@ -11468,7 +11468,7 @@ textarea.form-control-lg {
 /************************ ≥576px*/
 @media (min-width: 576px) {
   body {
-    background: rgb(129, 129, 101);
+    background: rgb(218, 158, 203);
   }
 }
 /************************ ≥768px*/
@@ -11478,6 +11478,24 @@ textarea.form-control-lg {
   }
   #content-manager {
     text-align: left;
+  }
+  #my-tabs-row #tabs-2 #nav-tab {
+    width: initial;
+  }
+  #tabs-2 .nav-link {
+    border-top: none !important;
+  }
+  #tabs-2 .nav-link:after {
+    display: none !important;
+  }
+  #tabs-2 .nav-link:last-child {
+    border-bottom: none !important;
+  }
+  #tabs-2 .nav-link.active {
+    border-bottom: 3px solid #fa5959 !important;
+  }
+  #tabs-2 .nav-link:hover {
+    color: #fa5959 !important;
   }
 }
 /************************ ≥992px*/
