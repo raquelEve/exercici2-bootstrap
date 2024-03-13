@@ -11464,6 +11464,10 @@ textarea.form-control-lg {
   transform: translateX(-50%); /* Lo desplaza hacia la izquierda la mitad de su propio ancho */
 }
 
+#my-cards-row .card-body {
+  border-top: 3px dotted silver;
+}
+
 /******************************[ MEDIAS ]*******************************************/
 /************************ ≥576px*/
 @media (min-width: 576px) {
