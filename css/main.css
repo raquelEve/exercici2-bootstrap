@@ -11485,6 +11485,17 @@ textarea.form-control-lg {
   box-shadow: none !important;
 }
 
+footer .first-row h3.joined, footer .first-row .joined.h3 {
+  letter-spacing: 0.5rem;
+  font-size: 0.8rem;
+}
+footer .first-row h2, footer .first-row .h2 {
+  margin-bottom: 2rem;
+}
+footer .first-row button {
+  display: block;
+}
+
 /******************************[ MEDIAS ]*******************************************/
 /************************ ≥576px*/
 @media (min-width: 576px) {

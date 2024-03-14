@@ -101,6 +101,20 @@ $theme-colors: (
     box-shadow: none !important;
   }
 }
+footer{
+  .first-row{
+    h3.joined{
+      letter-spacing: .5rem;
+      font-size: 0.8rem;
+    }
+    h2{
+      margin-bottom: 2rem;
+    }
+    button{
+      display: block;
+    }
+  }
+}
 // body{
 //   background: orange !important;
 // }
