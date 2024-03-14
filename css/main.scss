@@ -78,9 +78,11 @@ $theme-colors: (
   }
 }
 #my-cards-row{
-  .card-body{
-    border-top: 3px dotted silver;
-  }
+  
+    .card-body{
+      border-top: 3px dotted silver;
+    }
+  
 }
 // body{
 //   background: orange !important;
@@ -130,9 +132,19 @@ $theme-colors: (
   .me-nav {
     margin-right: 0px;
   }
+  #my-cards-row{
+    .card:nth-child(2){
+      position: relative;
+      top: 80px;
+    }
+    .card:last-child{
+      position: relative;
+      top: 180px;
+    }
+  }
 
   body {
-    background: #ced1ec;
+    background: #f6f176;
   }
 }
 /************************ ≥1200px*/
