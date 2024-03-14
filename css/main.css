@@ -11468,6 +11468,23 @@ textarea.form-control-lg {
   border-top: 3px dotted silver;
 }
 
+#faq-row {
+  margin-top: 200px;
+}
+
+/*TODO: ARREGLAR EL NOT*/
+#infoAccordion .accordion-button:not(.collapsed) {
+  background: #fff;
+  border: none !important;
+  border-bottom: 1ps solid silver; /*TODO: quitar silver*/
+}
+#infoAccordion .accordion-button:not(.collapsed):after {
+  background-image: url("../Imagenes/icon-arrow.svg");
+}
+#infoAccordion .accordion-button:focus {
+  box-shadow: none !important;
+}
+
 /******************************[ MEDIAS ]*******************************************/
 /************************ ≥576px*/
 @media (min-width: 576px) {

@@ -84,6 +84,23 @@ $theme-colors: (
     }
   
 }
+#faq-row{
+  margin-top: 200px;
+}
+/*TODO: ARREGLAR EL NOT*/
+#infoAccordion{ 
+  .accordion-button:not(.collapsed) {
+    background: #fff;
+    border:none !important;
+    border-bottom: 1ps solid silver; /*TODO: quitar silver*/
+    &:after{
+      background-image: url("../Imagenes/icon-arrow.svg");
+    }
+  }
+  .accordion-button:focus {
+    box-shadow: none !important;
+  }
+}
 // body{
 //   background: orange !important;
 // }
