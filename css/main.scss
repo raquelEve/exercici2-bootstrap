@@ -1,64 +1,133 @@
 $primary: #5265e1;
 $secondary: #fa5959;
+$dark-text-color: #23283e;
+$light-text-color: #a4a5a9;
 
-$theme-colors: (
-  "primary": $primary,
+
+$theme-colors: ("primary": $primary,
   "secondary": $secondary,
 );
 
+@mixin hover-styles($color) {
+  &:hover {
+    color: $color !important;
+    border-color: $color;
+    background: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+.elemento {
+  @include hover-styles($primary);
+}
+
+body {
+  color: $light-text-color;
+}
+
+h1,
+h2,
+h3,
+a {
+  color: $dark-text-color;
+}
 
 .bton-grey {
   background: #f7f7f5;
 }
+
 .me-nav {
   margin-right: 100px;
 }
+
+.bg-body-tertiary{
+  background: #fff !important;
+}
+header {
+  nav {
+    background: #fff !important;
+    a.nav-link:hover {
+      color: $secondary !important;
+    }
+    .btn-secondary{
+      @include hover-styles($secondary);
+    }
+  }
+}
+
+/* primera row*/
 #content-manager {
   text-align: center;
+
   button {
     min-width: 208px;
     margin-bottom: 5px;
   }
+
+  .btn-primary {
+    @include hover-styles($primary);
+  }
+
+  .bton-grey {
+    background: #f6f6f6 !important;
+    @include hover-styles($dark-text-color);
+  }
 }
+
 #my-tabs-row {
 
-  #tabs-2 {
+  // PESTAÑAS
+  nav#tabs-2 {
     width: calc(100% - 3rem);
     text-align: center;
+
     #nav-tab {
-      /*TODO:  cambiar por variable &&& poner en  mediaquery que toca*/
-      // border-bottom: 1px solid #e0e0ea;
+
       width: calc(100% - 3rem);
-      button.nav-link {
+
+      buton.nav-link {
         border: 1px 0px 0px 0px !important;
-        color: black; //TODO: cambiar por variable
+        color: $dark-text-color; 
+
         &.active,
         &:hover.active {
           border: none;
           border-bottom: 3px solid $secondary;
         }
+
         &:hover,
         &:focus {
           border-color: transparent;
           outline: 0px;
         }
+
       }
     }
+
     .nav-link {
       border-color: transparent;
-      border-top: 1px solid silver; /*TODO: CAMBIAR COLOR*/
+      border-top: 1px solid $light-text-color;      
       position: relative;
-      color: black;
-      &:last-child{
-        border-bottom: 1px solid silver; /*TODO: CAMBIAR COLOR*/
+      color: $dark-text-color;
+
+      &:last-child {
+        border-bottom: 1px solid $light-text-color;        
       }
+
       &:hover {
-        border-top: 1px solid silver; /*TODO: CAMBIAR COLOR*/
+        border-top: 1px solid $light-text-color;        
       }
+
       &.active {
         font-weight: 500;
       }
+
       &.active:after {
         content: "";
         display: block;
@@ -67,94 +136,178 @@ $theme-colors: (
         background-color: $secondary;
         position: absolute;
         bottom: 0px;
-        left: 50%; /* Mueve el elemento a la mitad del contenedor */
-        transform: translateX(
-          -50%
-        ); /* Lo desplaza hacia la izquierda la mitad de su propio ancho */
+        left: 50%;
+        /* Mueve el elemento a la mitad del contenedor */
+        transform: translateX(-50%);
+        /* Lo desplaza hacia la izquierda la mitad de su propio ancho */
       }
-     
+
     }
-    
+
+    .part-second-tab {
+      .btn {
+        @include hover-styles($primary);
+      }
+    }
   }
 }
-#my-cards-row{
-  
-    .card-body{
-      border-top: 3px dotted silver;
+
+#my-cards-row {
+
+  /* TARJETAS */
+  .card-body {
+    border-top: 4px solid transparent;
+    border-image: url('../Imagenes/bg-dots.svg') 4 round;
+
+    .btn {
+      width: 100%;
+      @include hover-styles($primary);
     }
-  
+  }
+
 }
-#faq-row{
+
+#faq-row {
   margin-top: 200px;
+
 }
-/*TODO: ARREGLAR EL NOT*/
-#infoAccordion{ 
+
+#infoAccordion {
   .accordion-button:not(.collapsed) {
     background: #fff;
-    border:none !important;
-    border-bottom: 1ps solid silver; /*TODO: quitar silver*/
-    &:after{
+    border: none !important;
+    border-bottom: 1ps solid $light-text-color;
+
+    &:after {
       background-image: url("../Imagenes/icon-arrow.svg");
     }
+
+    &:hover {
+      color: $secondary !important;
+    }
   }
+
+  .accordion-button.collapsed {
+    &:hover {
+      color: $secondary !important;
+    }
+  }
+
   .accordion-button:focus {
     box-shadow: none !important;
   }
 }
-footer{
-  .first-row{
-    h3.joined{
+
+footer {
+  .first-row {
+    h3.joined {
       letter-spacing: .5rem;
       font-size: 0.8rem;
     }
-    h2{
+
+    h2 {
       margin-bottom: 2rem;
     }
-    button{
+
+    button {
       display: block;
+      width: 100%;
+      @include hover-styles($secondary);
+    }
+input{
+  border-radius: 5px !important;
+}
+    .nav-item:first-child {
+      margin-left: 0px !important;
+    }
+
+    #error {
+      background: red;
+      border-bottom-left-radius: 10px;
+      /* Radio de la esquina inferior izquierda */
+      border-bottom-right-radius: 10px;
+      color: #fff;
+      top: -5px;
+      font-size: 10px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      position: relative;
+      top: -5px;
+      height: 18px;
+      font-style: italic;
+      padding-top: 2px;
     }
   }
+
+  #row-footer-links {
+    background-color: #242946;
+    color: #fff;
+
+    #logo-footer {
+      filter: invert(1);
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* Cambiar el color del texto y subrayarlo al hacer hover */
+    .nav-item a:hover {
+      color: $secondary;
+    }
+
+    /* Cambiar el color de la imagen al hacer hover */
+    .social-link a:hover svg path {
+      fill: $secondary;
+    }
+
+  }
+
+  #row-footer-links .nav-item a:hover {
+    color: $secondary !important;
+  }
 }
-// body{
-//   background: orange !important;
-// }
+
+
 
 /******************************[ MEDIAS ]*******************************************/
 
 /************************ ≥576px*/
-
-
 @include media-breakpoint-up(sm) {
-  body {
-    background: rgb(218, 158, 203);
-  }
+ 
 }
 
 
 /************************ ≥768px*/
 @include media-breakpoint-up(md) {
-  body {
-    background: rgb(172, 219, 204);
-  }
+ 
+
   #content-manager {
     text-align: left;
   }
+
   #my-tabs-row #tabs-2 #nav-tab {
     width: initial;
   }
-  #tabs-2 .nav-link{
+
+  #tabs-2 .nav-link {
     border-top: none !important;
-    &:after{
+
+    &:after {
       display: none !important;
     }
+
     &:last-child {
-        border-bottom: none !important;
+      border-bottom: none !important;
     }
-    &.active{
+
+    &.active {
       border-bottom: 3px solid $secondary !important;
     }
-    &:hover{
-      color:  $secondary !important;
+
+    &:hover {
+      color: $secondary !important;
     }
   }
 }
@@ -165,31 +318,27 @@ footer{
   .me-nav {
     margin-right: 0px;
   }
-  #my-cards-row{
-    .card:nth-child(2){
+
+  #my-cards-row {
+    .card:nth-child(2) {
       position: relative;
       top: 80px;
     }
-    .card:last-child{
+
+    .card:last-child {
       position: relative;
       top: 180px;
     }
   }
 
-  body {
-    background: #f6f176;
-  }
 }
+
 /************************ ≥1200px*/
 @include media-breakpoint-up(xl) {
-  body {
-    background: rgb(235, 207, 212);
-  }
+  
 }
 
 /************************ ≥1400px*/
 @include media-breakpoint-up(xxl) {
-  body {
-    background: rgb(223, 212, 212);
-  }
+ 
 }
